@@ -1,0 +1,259 @@
+body
+{
+    padding-top: 51px;
+    padding-bottom: 51px;
+    background-color: #111;
+    color: #ccc;
+    font-size: 1.6em;
+}
+
+a
+{
+	color: #f80;
+}
+
+a:hover
+{
+	color: #f80;
+	text-decoration: underline;
+}
+
+a.sublink {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+
+@media (min-width: 768px)
+{
+    .container
+    {
+        width: 760px;
+    }
+}
+
+.header
+{
+    width: 100%;
+    height: 300px;
+    border-top: 1px solid #f80;
+    background: #000 url('../images/fire.gif') no-repeat center;
+    background-size: cover;
+    box-shadow: inset 0px 0px 30px 0px #000;
+    text-align: center;
+    padding: 30px;
+}
+
+.titleGif
+{
+  margin-top: 35px;
+  height: 200px;
+  background: url('../images/title.gif') no-repeat center;
+  background-size: contain;
+}
+
+.titleLocation
+{
+  height: 250px;
+  background: url('../images/location.gif') no-repeat center;
+  background-size: contain;
+}
+
+.titleCompetitions
+{
+  height: 250px;
+  background: url('../images/competitions.gif') no-repeat center;
+  background-size: contain;
+}
+
+.titleVisitors
+{
+  height: 250px;
+  background: url('../images/visitors.gif') no-repeat center;
+  background-size: contain;
+}
+
+.titleTimetable
+{
+  height: 250px;
+  background: url('../images/timetable.gif') no-repeat center;
+  background-size: contain;
+}
+
+.titleLogo
+{
+  display: block;
+  max-width: 400px;
+  margin: 10px auto 0 auto;
+}
+
+.titleText
+{
+  display: inline-block;
+  height: 100px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.logo
+{
+  display: inline-block;
+  height: 100px;
+}
+
+.links
+{
+  text-align: center;
+}
+
+.header h1 {
+  color: #000;
+  height: 300px;
+  line-height: 150px;
+  vertical-align: middle;
+}
+
+.content
+{
+    margin: 20px 0px;
+}
+
+.content h2
+{
+    margin-top: 50px;
+    background-image: url("/title-icon.png");
+    background-repeat: no-repeat;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 45px;
+}
+
+.footer
+{
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    background-color: #f80;
+    color: #111;
+}
+
+.footer img
+{
+	margin: 40px;
+	height: 80px;
+}
+
+.trFrame {
+  height: 200px;
+  box-shadow: inset 0px 40px 30px 0px #000;
+}
+
+.tdPhoto {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+}
+
+.noLine {
+  border-top: hidden;
+}
+
+.trSpace {
+  height: 40px;
+}
+
+.trMoleman {
+  background: url("../images/timetable/moleman.png") center;
+  background-size: contain;
+}
+
+.tdPoke {
+  background: url("../images/timetable/poke.jpg") center;
+  background-size: cover;
+}
+
+.trPoke {
+  background: url("../images/timetable/pokeCover.png") center;
+  background-size: contain;
+}
+
+.trSlayer {
+  background: url("../images/timetable/slayerCover.png") center;
+  background-size: cover;
+}
+
+.tdSlayer {
+  background: url("../images/timetable/slayer.jpg") center;
+  background-size: cover;
+}
+
+.trCoyhot {
+  height: 300px;
+  background: url("../images/timetable/Presentation_EEVEE.png") center;
+  background-size: contain;
+}
+
+.tdCoyhot {
+  background: url("../images/timetable/Photo_CoyHot.png") center;
+  background-size: cover;
+}
+
+.trFlopine {
+  background: url("../images/timetable/cookie_shader_atelier.png") center;
+  background-size: cover;
+}
+
+.tdFlopine {
+  background: url("../images/timetable/flopine.jpg") center;
+  background-size: cover;
+}
+
+.trPlayShangai {
+  background: url("../images/timetable/playshangai.png") center;
+  background-size: cover;
+}
+
+.trVideoGameMusic {
+  background: url("../images/timetable/videogamemusic.png") center;
+  background-size: cover;
+}
+
+.trUgly {
+  background: url("../images/timetable/ugly.jpg") top;
+  background-size: cover;
+}
+
+.trHotel {
+  background: url("../images/timetable/hotel.jpg") bottom;
+  background-size: cover;
+}
+
+.trXtrium {
+  background: url("../images/timetable/xtrium.jpg") bottom;
+  background-size: cover;
+}
+
+.tdHello {
+  background: url("../images/timetable/hello.jpg") bottom;
+  background-size: cover;
+}
+
+.trHello {
+  background: url("../images/timetable/helloCover.png") bottom;
+  background-size: contain;
+}
+
+.trCouguarsOnABeach {
+  background: url("../images/timetable/couguarsonabeach.jpg") bottom;
+  background-size: cover;
+}
+
+.trCactusEtMammuth {
+  background: url("../images/timetable/cactusetmammuth.jpg") bottom;
+  background-size: cover;
+}

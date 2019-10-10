@@ -1,0 +1,69 @@
+body {
+	background: url("background.jpg");
+	font-family: "Roboto Slab", serif;
+	color: white;
+	font-size: 22px;
+}
+
+a {
+	color: white;
+}
+
+em {
+	color: #09d7d7;
+	font-size: 120%;
+	text-shadow: 3px 3px 0px #520000;
+}
+
+#container {
+	margin: 70px auto 50px auto;
+	max-width: 860px;
+}
+
+#links {
+	text-align: center;
+	margin-bottom: 40px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+#links a {
+	padding: 0 5px;
+}
+
+img.logo {
+	display: block;
+	margin: auto;
+	max-width: 512px;
+	width: 100%;
+}
+
+h1,
+h2,
+p {
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+
+h1,
+h2 {
+	font-family: "Anton", cursive;
+}
+
+img {
+	width: 100%;
+}
+
+@media screen and (min-width: 560px) {
+	#container {
+		margin-top: 50px;
+	}
+
+	#links {
+		background: rgba(0, 0, 0, 0.8);
+		padding: 10px;
+		position: fixed;
+	}
+}

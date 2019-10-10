@@ -1,0 +1,153 @@
+body {
+    padding-top: 51px;
+    padding-bottom: 51px;
+    background-color: #111;
+    color: #ccc;
+    font-size: 1.6em;
+}
+
+canvas {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+a {
+    color: #f80;
+}
+
+a:hover {
+    color: #f80;
+    text-decoration: underline;
+}
+
+a.sublink {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+
+img.wide {
+    Width: 100%;
+}
+
+.container {
+    max-width: 760px;
+}
+
+.nav a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.header img {
+    margin-top: 25vh;
+    margin-bottom: 15vh;
+}
+
+.logo {
+    display: inline-block;
+    height: 100px;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content {
+    width: 760px;
+    margin: auto;
+    z-index: 10;
+    background-color: #111;
+    box-shadow: 0px 0px 30px 0px #000;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+}
+
+.content h2 {
+    background-image: url("/title-icon.png");
+    background-repeat: no-repeat;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 45px;
+}
+
+.content h2.long {
+    margin-bottom: 50px;
+}
+.content h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.content .bio {
+    border: 1px solid #444;
+    padding: 10px;
+    font-style: italic;
+    clear: both;
+}
+
+.content .bio img.face {
+    float: right;
+    width: 160px;
+    margin: 0 0 10px 10px;
+}
+
+.timetable .category {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.timetable .category.competition {
+    background-color: #264372;
+}
+
+.timetable .category.speedrun {
+    background-color: #267271;
+}
+
+.timetable .category.performance {
+    background-color: #722665;
+}
+
+.timetable .category.talk {
+    background-color: #726626;
+}
+
+.timetable .category.workshop {
+    background-color: #723126;
+}
+
+.credit {
+    padding-bottom: 10px;
+    font-style: italic;
+    color: #cccccc;
+    text-align: right;
+}
+
+.footer {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    background-color: #f80;
+    color: #111;
+}
+
+.footer img {
+    margin: 40px;
+    height: 80px;
+}

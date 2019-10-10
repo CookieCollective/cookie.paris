@@ -1,0 +1,39 @@
+*
+{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+html, body
+{
+  background: url('../images/background.jpg');
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 22px;
+}
+
+a {
+  color: #faf35c;
+  text-decoration: none;
+}
+
+.bloc {
+	max-width: 800px;
+	margin: auto !important;
+	padding: 10px !important;
+}
+
+.bloc img {
+	width: 100%;
+}
+
+.container-fluid img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.text {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}

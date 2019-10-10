@@ -1,0 +1,74 @@
+@font-face {
+	font-family: BebasNeue-Bold;
+	src: url("BebasNeue-Bold.otf") format("opentype");
+}
+@font-face {
+	font-family: BebasNeue-Book;
+	src: url("BebasNeue-Book.otf") format("opentype");
+}
+
+body {
+	background: black;
+	font-family: "BebasNeue-Book";
+	font-size: 30px;
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+canvas {
+	position:fixed;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+#logo {
+	max-width: 600px;
+	margin: auto;
+}
+
+#logo img {
+	width: 100%;
+}
+
+.content {
+	max-width: 600px;
+	margin: auto;
+	margin-bottom: 100px;
+	background: rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+	margin: 0;
+	margin-top: 20px;
+	font-size: 50px;
+}
+
+p, ul {
+	margin: 0;
+}
+
+a {
+	color: #fff;
+}
+
+em {
+	font-weight: bold;
+
+	color: #09d7d7;
+	font-size: 120%;
+	text-shadow: 3px 3px 0px #520000;
+}
+
+.anaglyph {
+	font-size: 30px;
+	box-sizing: content-box;
+	border: none;
+	color: rgb(254, 254, 254);
+	text-overflow: clip;
+	letter-spacing: 3px;
+	text-shadow: -3px 0 1px rgb(0,254,254) , 3px 0 1px rgb(254,0,0) ;
+}

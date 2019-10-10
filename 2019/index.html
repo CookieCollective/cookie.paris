@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cookie Party 2019</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Cookie Collective">
+	<meta name="description" content="Digital art festival on October 26, 2019 in Paris, France.">
+		
+	<meta property="og:description" content="Digital art festival on October 26, 2019 in Paris, France.">
+	<meta property="og:image" content="/logo.jpg">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Cookie Party 2019">
+	<meta property="og:url" content="https://2019.cookie.paris/">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:description" content="Digital art festival on October 26, 2019 in Paris, France.">
+	<meta name="twitter:image" content="/logo.jpg">
+	<meta name="twitter:title" content="Cookie Party 2019">
+	<meta name="twitter:site" content="@CookieDemoparty">
+
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="title-icon.png" />
+</head>
+<body>
+	<div id="logo"><img src="logo.png"></div>
+	<div class="content">
+		<h1>About</h1>
+		<p>Cookie Party is a light version of the Cookie Demoparty, with workshops, games, projections, lasers, concerts, and a live-coding tournament.</p>
+		<h1>Date</h1>
+		<p><em>Saturday, October 26, 2019</em></p>
+		<p>From noon to midnight.</p>
+		<h1>Location</h1>
+		<p>The party will take place at <em>Au Landy Sauvage</em>.</p>
+		<p>166 rue du Landy, Saint-Denis, France</p>
+		<p><a href="https://www.google.com/maps/place/Au+Landy+Sauvage/@48.914371,2.3466165,15z/data=!4m5!3m4!1s0x0:0xb562d734df11be8!8m2!3d48.914371!4d2.3466165" target="_blank">Open in Google Maps</a></p>
+		<p>Access from Paris by
+			<br/><img src="RER.png" alt="RER"><img src="D.png" alt="D"> Stade de France - Saint-Denis,
+			<br/><img src="RER.png" alt="RER"><img src="B.png" alt="B"> La Plaine - Stade de France.</p>
+		<h1>Timetable</h1>
+		<p>To be announced soon!</p>
+		<p>Expect:
+			<ul>
+				<li>All day long: games, art projections.</li>
+				<li>Afternoon: workshops on digital creation.</li>
+				<li>Evening: concerts, live coding performances.</li>
+			</ul>
+		</p>
+		<h1>Contact</h1>
+		<p><a href="mailto:contact@cookie.paris" target="_blank">contact@cookie.paris</a></p>
+	</div>
+	<canvas id="canvas"></canvas>
+	<script src="twgl-full.min.js"></script>
+	<script id="vs" type="notjs">
+precision mediump float;
+attribute vec4 position;
+attribute vec4 seed;
+uniform mat4 viewProjection;
+uniform float time;
+uniform vec2 resolution;
+mat2 rotation (float a) { float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }
+void main () {
+	vec4 pos = position;
+	float t = time * 0.1 + seed.w * 3.1415 * 2.;
+	pos.xz *= rotation(t);
+	pos.yz *= rotation(t);
+	pos.yx *= rotation(t);
+	pos.xyz *= 0.15 + seed.z * 0.05;
+	pos.xyz += seed.xyz * 4.0 * vec3(resolution.x/resolution.y,1,1);
+	//pos.y -= seed.w * 3.;
+	gl_Position = viewProjection * pos;
+	gl_PointSize = 4.0;
+}
+	</script>
+	<script id="fs" type="notjs">
+precision mediump float;
+uniform float time;
+uniform vec4 color;
+void main() {
+	gl_FragColor = vec4(color);
+}
+	</script>
+	<script src="webgl.js"></script>
+</body>
+</html>
