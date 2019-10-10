@@ -51,6 +51,10 @@ p, ul {
 	margin: 0;
 }
 
+.sep {
+	margin-top: 30px;
+}
+
 a {
 	color: #fff;
 }
@@ -63,6 +67,14 @@ em {
 	text-shadow: 3px 3px 0px #520000;
 }
 
+.banner {
+	width: 100%;
+}
+
+.desc {
+	font-size: 20px;
+}
+
 .anaglyph {
 	font-size: 30px;
 	box-sizing: content-box;
@@ -71,4 +83,20 @@ em {
 	text-overflow: clip;
 	letter-spacing: 3px;
 	text-shadow: -3px 0 1px rgb(0,254,254) , 3px 0 1px rgb(254,0,0) ;
+}
+
+table {
+	border-collapse: collapse;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+td, th {
+	padding: 5px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.withline td, .withline th {
+	border-bottom: 1px solid #fff;
 }
