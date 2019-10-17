@@ -67,6 +67,10 @@ em {
 	text-shadow: 3px 3px 0px #520000;
 }
 
+em a {
+	color: #09d7d7;
+}
+
 .banner {
 	width: 100%;
 }
