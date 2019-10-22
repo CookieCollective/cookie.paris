@@ -40,6 +40,9 @@
 		<p>Access from Paris by
 			<br/><img src="RER.png" alt="RER"><img src="D.png" alt="D"> Stade de France - Saint-Denis,
 			<br/><img src="RER.png" alt="RER"><img src="B.png" alt="B"> La Plaine - Stade de France.</p>
+
+		<h1>Contact</h1>
+		<p><a href="mailto:contact@cookie.paris" target="_blank">contact@cookie.paris</a></p>
 		
 		<h1>Timetable</h1>
 
@@ -48,8 +51,10 @@
 		<p class="sep">14:00 &gt; Workshop: <em><a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a></em>, by <a href="https://twitter.com/NuSan_fx/">Nusan</a> + <a href="http://sam.zoy.org/">Sam Hocevar</a></p>
 		<img class="banner" src="pico-8.png"/>
 
-		<p class="sep">16:00 &gt; Workshop: <em><a href="https://www.littlesounddj.com/lsd/index.php">LSDJ</a></em>, by <a href="https://cyanidedansen.bandcamp.com/">Cyanide</a> + Valden</p>
+		<p class="sep">16:00 &gt; Workshop: <em><a href="https://www.littlesounddj.com/lsd/index.php">LSDJ</a></em>, by <a href="https://cyanidedansen.bandcamp.com/">Cyanide</a> + <a href="https://twitter.com/valdenthoranar">Valden</a></p>
 		<img class="banner" src="lsdj.jpg" />
+		<p class="desc">Ce workshop sera une introduction à LSDJ, un programme permettant de créer des musiques retro (chiptune) sur une Gameboy originale. Nous vous présenterons un bref historique de la musique chiptune, comment commencer à utiliser LSDJ ainsi que les différentes techniques utilisées lors de la création des musiques.<br/><br/>
+Matériel nécessaire : De quoi faire tourner un émulateur de Gameboy (nous recommandons BGB pour un PC ou My Old Boy Free pour Android), et une copie de LSDJ (<a href="https://www.littlesounddj.com/lsd/latest/demo_version/lsdj6_8_2_demo.gb">vous pouvez obtenir une démo gratuite à cette adresse</a>)</p>
 
 		<p class="sep">18:00 &gt; Shader Showdown: 2x Qualifications
 		<br />Music: <em>Psychout</em></p>
@@ -96,9 +101,19 @@
 		<p class="desc">Jeu d'exploration à la première personne en réalité filtrée.
 		<br /><a href="https://www.lechantducygne.com/palimpseste/">Website</a></p>
 
+		<p class="sep">Camille Grigaut</p>
+		<img class="banner" src="sheglitchr.png"/>
+		<p class="desc">Camille Grigaut est une artiste visuelle née près de Paris. Elle trace ses différentes énergies dans la naissance brisée de la nostalgie d'une époque qu'elle n'a pas connu. Les télévisions cathodiques, les cassettes VHS et le matériel analogique constituent ses matériaux de prédilection. Après avoir fait quelques expérimentations sur des images fixes, elle s'essaie maintenant de manière plus récurante à la vidéo par le biais de clips, teaser, lives et installations vidéo interactives.
+		<br/><a href="http://sheglitchr.com/">WEBSITE</a></p>
+
+		<p class="sep">PAMAL_Group</p>
+		<img class="banner" src="pamal.jpg"/>
+		<p class="desc">PAMAL_Group est un groupe artistique médiarchéologiste européen, composé d'artistes, théoriciens des média, conservateurs-restaurateurs et ingénieurs. PAMAL_Group centre ses recherches et son activité artistique sur les effets des média techniques numériques sur le monde de l'art, les œuvres d'art et leur préservation.
+		<br /><a href="http://pamal.org">Website</a></p>
+
 		<p class="sep">Kristallijn, by Gaël Bourhis</p>
 		<img class="banner" src="kristallijn.png"/>
-		<p class="desc">Kristallijn est un jeu d’ambiance à la première personne expérimentant autour de l’effet stroboscopique. C’est une expérience sur le mouvement sans mouvement, où l’intervalle entre deux flashs devient un espace non résolu, questionnant la continuité de nos perceptions et de nos existences.
+		<p class="desc">Kristallijn est un jeu d’ambiance à la première personne expérimentant autour de l’effet stroboscopique. C’est une expérience sur le mouvement sans mouvement, où l’intervalle entre deux flashs devient un espace non résolu, questionnant la continuité de nos perceptions et de nos existences.</p>
 
 		<p class="sep">CHOO CHOO, by hiloqo</p>
 		<img class="banner" src="CHOO CHOO.jpg"/>
@@ -110,13 +125,13 @@
 		<p class="desc">Installation interactive, horde de cartes électroniques mort-vivantes.
 		<br /><a href="http://glkitty.com/">Website</a></p>
 
-		<p class="sep">PAMAL_Group</p>
-		<img class="banner" src="pamal.jpg"/>
-		<p class="desc">PAMAL_Group est un groupe artistique médiarchéologiste européen, composé d'artistes, théoriciens des média, conservateurs-restaurateurs et ingénieurs. PAMAL_Group centre ses recherches et son activité artistique sur les effets des média techniques numériques sur le monde de l'art, les œuvres d'art et leur préservation.
-		<br /><a href="http://pamal.org">Website</a></p>
+		<p class="sep">Lazer, by /TMP/LAB</p>
+		<img class="banner" src="lazer.jpg"/>
+		<p class="desc"><a href="https://www.tmplab.org/">WEBSITE</a></p>
 
-		<h1>Contact</h1>
-		<p><a href="mailto:contact@cookie.paris" target="_blank">contact@cookie.paris</a></p>
+		<p class="sep">Char Ibniz, by Jonathan Giroux</p>
+		<img class="banner" src="ibniz.jpg"/>
+		<p class="desc"><a href="http://koltes.digital/">WEBSITE</a></p>
 	</div>
 	<canvas id="canvas"></canvas>
 	<script src="twgl-full.min.js"></script>
@@ -130,12 +145,15 @@ uniform vec2 resolution;
 mat2 rotation (float a) { float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }
 void main () {
 	vec4 pos = position;
-	float t = time * 0.1 + seed.w * 3.1415 * 2.;
+	float t = time * 0.4 + seed.w * 3.1415 * 2.;
+	float wave = mod(time * 0.05 + seed.w, 1.0);
+	float fade = smoothstep(0.0,0.1,wave)*smoothstep(1.0,0.9,wave);
 	pos.xz *= rotation(t);
 	pos.yz *= rotation(t);
 	pos.yx *= rotation(t);
 	pos.xyz *= 0.15 + seed.z * 0.05;
-	pos.xyz += seed.xyz * 4.0 * vec3(resolution.x/resolution.y,1,1);
+	pos.xyz *= fade;
+	pos.xyz += normalize(seed.xyz) * (0.5 + wave) * 4. * vec3(resolution.x/resolution.y,1,1);
 	//pos.y -= seed.w * 3.;
 	gl_Position = viewProjection * pos;
 	gl_PointSize = 4.0;
