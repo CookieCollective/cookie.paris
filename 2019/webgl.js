@@ -66,6 +66,8 @@ function render(elapsed) {
 	elapsed /= 1000;
 	uniforms.time = elapsed;
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+	gl.enable(gl.BLEND);
+	gl.blendFunc(gl.ONE, gl.ONE);
 	gl.useProgram(programInfo.program);
 	twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo);
 	uniforms.color = [1,0,0,1];

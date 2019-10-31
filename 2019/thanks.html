@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Thank You!</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Cookie Collective">
+	<meta name="description" content="Digital art festival on October 26, 2019 in Paris, France.">
+		
+	<meta property="og:description" content="Digital art festival on October 26, 2019 in Paris, France.">
+	<meta property="og:image" content="/logo.jpg">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Cookie Party 2019">
+	<meta property="og:url" content="https://2019.cookie.paris/">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:description" content="Digital art festival on October 26, 2019 in Paris, France.">
+	<meta name="twitter:image" content="/logo.jpg">
+	<meta name="twitter:title" content="Cookie Party 2019">
+	<meta name="twitter:site" content="@CookieDemoparty">
+
+	<link rel="stylesheet" href="bootstrap-grid.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="title-icon.png" />
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 case"><img src="bigthankyou.png"/></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12 case"><img src="c0.png"/></div>
+			<div class="col-lg-6 col-md-12 case"><img src="c3.png"/></div>
+			<div class="col-lg-6 col-md-12 case"><img src="c4.png"/></div>
+			<div class="col-lg-6 col-md-12 case"><img src="c5.png"/></div>
+			<div class="col-lg-12 col-md-12 case"><img src="c6.png"/></div>
+			<div class="col-lg-6 col-md-12 case"><img src="c2.png"/></div>
+			<div class="col-lg-6 col-md-12 case"><img src="c1.png"/></div>
+		</div>
+	</div>
+	<canvas id="canvas"></canvas>
+	<script src="twgl-full.min.js"></script>
+	<script id="vs" type="notjs">
+precision mediump float;
+attribute vec4 position;
+attribute vec4 seed;
+uniform mat4 viewProjection;
+uniform float time;
+uniform vec2 resolution;
+mat2 rotation (float a) { float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }
+void main () {
+	vec4 pos = position;
+	float t = time * 0.05 + seed.w * 3.1415 * 2.;
+	float wave = mod(time * 0.05 + seed.w, 1.0);
+	float fade = smoothstep(0.0,0.1,wave)*smoothstep(1.0,0.9,wave);
+	pos.xyz *= 0.1 + seed.z * 0.1;
+	pos.xyz *= fade;
+	pos.xz *= rotation(t*40.);
+	pos.yz *= rotation(t*40.);
+	pos.yx *= rotation(t*40.);
+	pos.xyz += normalize(seed.xyz) * (.5+wave) * 4. * vec3(resolution.x/resolution.y,1,1);
+	pos.xz *= rotation(t);
+	pos.yz *= rotation(t);
+	pos.yx *= rotation(t);
+	gl_Position = viewProjection * pos;
+	gl_PointSize = 4.0;
+}
+	</script>
+	<script id="fs" type="notjs">
+precision mediump float;
+uniform float time;
+uniform vec4 color;
+void main() {
+	gl_FragColor = vec4(color);
+}
+	</script>
+	<script src="webgl.js"></script>
+</body>
+</html>

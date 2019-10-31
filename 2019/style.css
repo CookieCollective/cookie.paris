@@ -41,6 +41,26 @@ canvas {
 	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
 }
 
+.case {
+	padding: 0 5px !important;
+	margin: 0 !important;
+
+}
+
+.case img {
+	width: 100%;
+	display: inline;
+}
+
+.container h1 {
+	background: black;
+}
+
+.container p {
+	background: black;
+	text-align: center;
+}
+
 h1 {
 	margin: 0;
 	margin-top: 20px;
@@ -64,7 +84,7 @@ em {
 
 	color: #09d7d7;
 	font-size: 120%;
-	text-shadow: 3px 3px 0px #520000;
+	text-shadow: 3px 2px 0px #cc0000;
 }
 
 em a {
