@@ -55,13 +55,13 @@ h1,
 h2,
 h3 {
   font-family: "bebasneue_bold", sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   padding: 0;
   margin: 0;
 }
 
 h2 {
-	font-size: 40px;
+	font-size: 30px;
   display: inline-block;
 }
 
@@ -87,6 +87,11 @@ img {
 	width: 100%;
 }
 
+video {
+	border-radius: 50%;
+	width: 100%;
+}
+
 @font-face {
 	font-family: 'bebasneue_bold';
 	src: url('bebasneue_bold.woff2') format('woff2'),
@@ -106,4 +111,7 @@ canvas {
 	top: 0;
 	width: 100vw;
 	height: 100vh;
+}
+
+.cropcircle {
 }
