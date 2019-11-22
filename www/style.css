@@ -1,8 +1,12 @@
 body {
-	background: url("background.jpg");
-	font-family: "Roboto Slab", serif;
+	background: black;
+  font-family: "Open Sans", sans-serif;
 	color: white;
 	font-size: 22px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 200px;
 }
 
 a {
@@ -16,7 +20,7 @@ em {
 }
 
 #container {
-	margin: 70px auto 50px auto;
+	margin: 0 auto;
 	max-width: 860px;
 }
 
@@ -43,27 +47,63 @@ img.logo {
 h1,
 h2,
 p {
-	background: rgba(0, 0, 0, 0.5);
-	padding: 10px;
+  padding: 0;
+  margin: 0;
 }
 
 h1,
+h2,
+h3 {
+  font-family: "bebasneue_bold", sans-serif;
+  font-size: 80px;
+  padding: 0;
+  margin: 0;
+}
+
 h2 {
-	font-family: "Anton", cursive;
+	font-size: 40px;
+  display: inline-block;
+}
+
+h3 {
+	font-size: 30px;
+  display: inline-block;
+}
+
+.col-12 {
+	padding-bottom: 60px;
+}
+
+.subtitle {
+}
+
+.small {
+	max-width: 600px;
+	display: block;
+	margin: auto;
 }
 
 img {
 	width: 100%;
 }
 
-@media screen and (min-width: 560px) {
-	#container {
-		margin-top: 50px;
-	}
+@font-face {
+	font-family: 'bebasneue_bold';
+	src: url('bebasneue_bold.woff2') format('woff2'),
+	url('bebasneue_bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
-	#links {
-		background: rgba(0, 0, 0, 0.8);
-		padding: 10px;
-		position: fixed;
-	}
+@media screen and (min-width: 560px) {
+}
+
+
+canvas {
+	position:fixed;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
 }
