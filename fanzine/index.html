@@ -17,38 +17,68 @@
 	<meta name="twitter:title" content="Cookie Fanzine">
 	<meta name="twitter:image" content="/images/cover.jpg">
 	<meta name="twitter:description" content="Cookie Collective Fanzine">
-
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="style/css.css" />
+	<link rel="stylesheet" type="text/css" href="style/bootstrap-grid.css" />
 	<link rel="stylesheet" type="text/css" href="style/style.css" />
 	<link rel="shortcut icon" href="title-icon.png" />
 </head>
 <body>
 	<div class="bloc">
 		<div class="text">
-			Cookie Collective publishes a fanzine about real-time digital art.
+			<h1>Cookie Zines!</h1>
+			Cookie Collective is creating fanzines about real-time, digital art, programming and demoscene.<br/>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12"><a href="1.html"><img src="covers/1.png"></a></div>
+				<div class="col-lg-6 col-md-12"><a href="2.html"><img src="covers/2.png"></a></div>
+				<div class="col-lg-6 col-md-12"><a href="3.html"><img src="covers/3.png"></a></div>
+			</div>
 		</div>
 		<div class="text">
-			We have fees, but still distribute the fanzine with no fixed price: you pay what you want. <a href="https://www.paypal.me/leondenise196">If you read it online, please donate via PayPal with the message "<em>Cookie Collective</em>".</a>
-		</div>
-		<img src="images/header.jpg">
-		<div class="text">
-			The first issue is a collection of shaders on ShaderToy made by the Cookie community.<br/>
-			<a href="1.html">Read the web version.</a><br/>
-			<a href="pdf/Cookie.Collective.Fanzine.1.booklet.pdf">Download and print the booklet PDF.</a>
-		</div>
-		<a href="1.html"><img src="1/0.jpg"></a>
-		<div class="text">
-			The second issue is dedicated to bugs, glitches, and errors.<br/>
-			<a href="2.html">Read the web version.</a><br/>
-			<a href="pdf/Cookie.Collective.Fanzine.2.booklet.pdf">Download and print the booklet PDF.</a>
-		</div>
-		<a href="2.html"><img src="2/0.jpg"></a>
-		<div class="text">
-			<a href="https://github.com/CookieCollective/fanzine-archives">You can also get the sources on GitHub.</a>
-		</div>
-		<div class="text">
-			<a href="https://www.paypal.me/leondenise196">Support the Cookie Collective in producing fanzines and organizing events by donating via PayPal with the message "<em>Cookie Collective</em>".</a>
+			<a href="https://www.paypal.me/leondenise196">Donate via PayPal</a> with the message <em>Cookie Collective</em><br/>
+			<a href="https://github.com/CookieCollective/fanzine-archives">GitHub archives</a>
 		</div>
 	</div>
+	<canvas id="canvas"></canvas>
+	<script src="twgl-full.min.js"></script>
+	<script id="vs" type="notjs">
+precision mediump float;
+attribute vec4 position;
+attribute vec2 anchor, quantity;
+uniform mat4 viewProjection;
+uniform float time;
+uniform vec2 resolution;
+const float PI = 3.14;
+const float TAU = 6.28;
+mat2 rotation (float a) { float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }
+float random(vec2 p) { return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); }
+void main () {
+	vec4 pos = position;
+	pos.xyz += (vec3(random(quantity.xy), random(quantity.xy+4.542), random(quantity.xy+65.57))*2.-1.);
+	pos.xz *= 4.*resolution.x/resolution.y;
+	float ratio = quantity.x * TAU;
+	pos.xz *= rotation(time * .1 + ratio);
+	pos.yz *= rotation(time * .1 + ratio);
+	pos.y -= (mod(time*.001+quantity.x,1.)*2.-1.)*12.;
+	float d = length(anchor);
+	vec3 uv = vec3(anchor, sin(d+quantity.x*TAU+time*2.)*.5*smoothstep(0.0,0.1,d));
+	uv.xz *= rotation(time * .1 + quantity.x * 10.64);
+	uv.yz *= rotation(time * .1 + quantity.x * 45.54);
+	uv.yx *= rotation(time * .1 + quantity.x * 2.485);
+	pos.xyz += uv.xyz * .2;
+	gl_Position = viewProjection * pos;
+	gl_PointSize = 4.0;
+}
+	</script>
+	<script id="fs" type="notjs">
+precision mediump float;
+uniform float time;
+void main() {
+	gl_FragColor = vec4(1);
+}
+	</script>
+	<script src="webgl.js"></script>
 </body>
 </html>

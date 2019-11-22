@@ -6,18 +6,29 @@
 
 html, body
 {
-  background: url('../images/background.jpg');
-  font-family: "Roboto Slab", serif;
+  background: black;
+  font-family: "Open Sans", sans-serif;
   color: white;
   font-size: 22px;
 }
 
 a {
-  color: #faf35c;
+  color: #ffc329;
   text-decoration: none;
 }
 
+canvas {
+	position:fixed;
+	z-index: 0;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
 .bloc {
+	position:relative;
+	z-index: 1;
 	max-width: 800px;
 	margin: auto !important;
 	padding: 10px !important;
@@ -36,4 +47,8 @@ a {
 .text {
 	padding-top: 20px !important;
 	padding-bottom: 20px !important;
+}
+
+img {
+	display: inline-block;
 }
