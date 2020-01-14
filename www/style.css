@@ -11,6 +11,7 @@ body {
 
 a {
 	color: white;
+	text-decoration: none;
 }
 
 em {
@@ -114,4 +115,9 @@ canvas {
 }
 
 .cropcircle {
+}
+
+.super{
+	vertical-align: super;
+	font-size: 15px;
 }
